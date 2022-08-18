@@ -8,11 +8,13 @@
        - Length/Precision: 1000000
        - Collation: pg_catalog."default"
 - Save
-### 2.	Tạo enum CUSTOMER_AVATAR_PROPERTY ở TMA_IoT_Cloud\dao\src\main\java\org\thingsboard\server\dao\model\ModelConstants.java
+### 2.  Tạo thư mục "img" để chứa avatar mặc định: TMA_IoT_Cloud\dao\src\main\resources\img\avatar.png
+Tên thư mục, tên file và đuôi file là các phần được hardcode.
+### 3.	Tạo enum CUSTOMER_AVATAR_PROPERTY ở TMA_IoT_Cloud\dao\src\main\java\org\thingsboard\server\dao\model\ModelConstants.java
 ```java
     public static final String CUSTOMER_AVATAR_PROPERTY = "avatar";
 ```
-### 3.	Thêm field “avatar” cho class TMA_IoT_Cloud\dao\src\main\java\org\thingsboard\server\dao\model\sql\CustomerEntity.java. 
+### 4.	Thêm field “avatar” cho class TMA_IoT_Cloud\dao\src\main\java\org\thingsboard\server\dao\model\sql\CustomerEntity.java. 
 Đây là class được ánh xạ với table “customer” trong database.
 -	Tạo field.
 ```java
@@ -67,7 +69,7 @@
         customer.setAvatar(avatar);
     }
 ```
-### 4.	Thêm field “avatar” cho class TMA_IoT_Cloud\common\data\src\main\java\org\thingsboard\server\common\data\Customer.java
+### 5.	Thêm field “avatar” cho class TMA_IoT_Cloud\common\data\src\main\java\org\thingsboard\server\common\data\Customer.java
 -	Tạo field
 ```java
     @Length(fieldName = "avatar", max = 1000000)
@@ -110,4 +112,3 @@
         this.avatar = avatar;
     }
 ```
-    
